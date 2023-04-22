@@ -11,7 +11,12 @@ toolchain = {'name': 'intel', 'version': '2018a'}
 
 source_urls = ['https://github.com/hfp/libxsmm/archive/']
 sources = ['%(version)s.tar.gz']
-checksums = ['08ed4a67731d07c739fa83c426a06a5a8fe576bc273da4bab84eb0d1f4405011']
+patches = ['libxsmm-1.8.3_fix-duplicate-float128-definition.patch']
+checksums = [
+    {'1.8.3.tar.gz': '08ed4a67731d07c739fa83c426a06a5a8fe576bc273da4bab84eb0d1f4405011'},
+    {'libxsmm-1.8.3_fix-duplicate-float128-definition.patch':
+     '682447309fd4a72b61e90d93122cd947ff3935f6afccd68b4eeff473b05effe9'},
+]
 
 # install both static and dynamic version
 installopts = ['PREFIX=%(installdir)s', 'PREFIX=%(installdir)s STATIC=0']
