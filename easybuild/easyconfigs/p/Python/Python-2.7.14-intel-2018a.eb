@@ -47,13 +47,20 @@ exts_list = [
         'patches': ['numpy-1.12.0-mkl.patch'],
         'source_tmpl': '%(name)s-%(version)s.zip',
         'checksums': [
-            '3de643935b212307b420248018323a44ec51987a336d1d747c1322afc3c099fb',  # numpy-1.14.0.zip
-            'f212296ed289eb1b4e3f703997499dee8a2cdd0af78b55e017477487b6377ca4',  # numpy-1.12.0-mkl.patch
+            {'numpy-1.14.0.zip': '3de643935b212307b420248018323a44ec51987a336d1d747c1322afc3c099fb'},
+            {'numpy-1.12.0-mkl.patch': 'f212296ed289eb1b4e3f703997499dee8a2cdd0af78b55e017477487b6377ca4'},
         ],
     }),
-    ('scipy', '1.0.0', {
-        'checksums': ['87ea1f11a0e9ec08c264dc64551d501fa307289460705f6fccd84cbfc7926d10'],
-    }),
+# Compiling scipy fails on Rocky 8, skip it in the EasyBuild and add
+# precompiled package from https://anaconda.org/anaconda/scipy/1.0.0/download/linux-64/scipy-1.0.0-py27hf5f0f52_0.tar.bz2
+# afterwards
+#    ('scipy', '1.0.0', {
+#        'patches': ['scipy-1.0.0_avoid-cmath.patch'],
+#        'checksums': [
+#            {'scipy-1.0.0.tar.gz': '87ea1f11a0e9ec08c264dc64551d501fa307289460705f6fccd84cbfc7926d10'},
+#            {'scipy-1.0.0_avoid-cmath.patch': 'a3107262fc543b6b4117b140eeccdd4b123fc34409dad4d7f28ec253f17ad2a8'},
+#        ],
+#    }),
     ('blist', '1.3.6', {
         'checksums': ['3a12c450b001bdf895b30ae818d4d6d3f1552096b8c995f0fe0c74bef04d1fc3'],
     }),
@@ -95,8 +102,8 @@ exts_list = [
         'checksums': ['64cf1ee26d1cde3c73c6d7d107f835fed7c6a2904aef9eac223d57ad800c43fa'],
     }),
     ('enum34', '1.1.6', {
-        'checksums': ['8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1'],
         'modulename': 'enum',
+        'checksums': ['8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1'],
     }),
     ('ipaddress', '1.0.22', {
         'checksums': ['b146c751ea45cad6188dd6cf2d9b757f6f4f8d6ffb96a023e6f2e26eea02a72c'],
@@ -120,8 +127,8 @@ exts_list = [
         'checksums': ['fb81622d8f3509f0026b0683fe90fea27be7284d3826a5f2edf97f69151ab0fc'],
     }),
     ('PyNaCl', '1.2.1', {
-        'checksums': ['e0d38fa0a75f65f556fb912f2c6790d1fa29b7dd27a1d9cc5591b281321eaaa9'],
         'modulename': 'nacl',
+        'checksums': ['e0d38fa0a75f65f556fb912f2c6790d1fa29b7dd27a1d9cc5591b281321eaaa9'],
     }),
     ('bcrypt', '3.1.4', {
         'checksums': ['67ed1a374c9155ec0840214ce804616de49c3df9c5bc66740687c1c9b1cd9e8d'],
