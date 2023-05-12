@@ -29,10 +29,12 @@ source_urls = [
     'ftp://ftp.freedesktop.org/pub/mesa/older-versions/%(version_major)s.x',
 ]
 sources = [SOURCELOWER_TAR_XZ]
-patches = ['Mesa-%(version)s_fix-strip-llvm-flags.patch']
+patches = ['Mesa-%(version)s_fix-strip-llvm-flags.patch',
+           'Mesa-%(version)s_fix-intel-math.patch',]
 checksums = [
-    'e5915680d44ac9d05defdec529db7459ac9edd441c9845266eff2e2d3e57fbf8',  # mesa-17.3.6.tar.xz
-    '5aa4e92ed96e3d47ffbecd1ec3a1642407dff11995c5585eb5e06c396654ee30',  # Mesa-17.3.6_fix-strip-llvm-flags.patch
+    {'mesa-17.3.6.tar.xz': 'e5915680d44ac9d05defdec529db7459ac9edd441c9845266eff2e2d3e57fbf8'},
+    {'Mesa-17.3.6_fix-strip-llvm-flags.patch': '5aa4e92ed96e3d47ffbecd1ec3a1642407dff11995c5585eb5e06c396654ee30'},
+    {'Mesa-17.3.6_fix-intel-math.patch': 'b7fc3b1e311b6fd3a4c4a8b83d7da657036ba27b1c628ac4b710fb74077e19eb'},
 ]
 
 builddependencies = [
