@@ -9,7 +9,12 @@ toolchainopts = {'pic': True}
 
 source_urls = ['http://www.cpan.org/src/%(version_major)s.0']
 sources = [SOURCELOWER_TAR_GZ]
-checksums = ['e763aa485e8dc1a70483dbe6d615986bbf32b977f38016480d68c99237e701dd']
+patches = ['Perl-5.26.1_guard-fix-for-really-old-bug-in-glibc-libcrypt.patch']
+checksums = [
+    {'perl-5.26.1.tar.gz': 'e763aa485e8dc1a70483dbe6d615986bbf32b977f38016480d68c99237e701dd'},
+    {'Perl-5.26.1_guard-fix-for-really-old-bug-in-glibc-libcrypt.patch':
+     'f195b1a4edff9e9415b5e9ef970bed1243d523f556c6f266ec8f8d13c9a1e737'},
+]
 
 builddependencies = [('binutils', '2.28')]
 
